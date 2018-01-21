@@ -1,0 +1,20 @@
+<div class="note-form">
+  <form>
+    <div>
+      <label for="title"></label>
+      <input type="text" class="title" placeholder="Title..." id="title" required>
+    </div>
+    <div>
+      <label for="desc"></label>
+      <textarea  class="desc" name="desc" placeholder="Note it..." id="desc" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+      <button type="submit">Save</button>
+      <button type="submit">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<div *ngFor="let t of notodo | async ">
+  <h4>{{t | json }}</h4>
+</div>

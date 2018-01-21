@@ -1,0 +1,18 @@
+main {
+  min-height: 60px;
+  background:skyblue;
+  width: 100%;
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  .twitter {
+    width: 70%;
+    margin:0 auto;    
+    display: flex;
+    .twitter__bird {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

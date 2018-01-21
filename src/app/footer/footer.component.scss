@@ -1,0 +1,13 @@
+.flex_footer{
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background: #fff;
+  flex-flow: row wrap;
+  justify-content: center;
+  height: 100px;
+  .footer_item{
+    width: 100px;
+  }
+}

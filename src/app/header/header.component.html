@@ -1,0 +1,15 @@
+<main>
+  <ul class="twitter" role="navigation">
+    <li><img src="./favicon.ico"></li>
+    <li>Home</li>
+    <li></li>
+    <li>About</li>
+    <li class="twitter__bird"></li>
+    <li *ngIf="login.currentUser">{{login.currentUser.displayName}}</li>
+    <!-- <li>
+      <form><input placeholder="search" /></form>
+    </li> -->
+    <!-- <li></li> -->
+    <!-- <li><button>Search</button></li> -->
+  </ul>
+</main>
