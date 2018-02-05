@@ -1,20 +1,32 @@
-<div class="note-form">
+<!-- <ul>
+  <li *ngFor="let n of notodo | async">
+    <p>{{n.title}}</p>
+    <p>{{n.description}}</p>
+  </li>
+</ul> -->
+
+<div class="note-list">
+  <div *ngFor="let note of notodo | async" class="note-item">
+    <div appRandomcolor class="note-title">
+      <h2 class="note-title-text">{{note.title}}</h2>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="note-form">
   <form>
     <div>
       <label for="title"></label>
-      <input type="text" class="title" placeholder="Title..." id="title" required>
+      <input [formControl] = "title" name="title" type="text" class="title" placeholder="Title..." id="title" required>
     </div>
     <div>
       <label for="desc"></label>
-      <textarea  class="desc" name="desc" placeholder="Note it..." id="desc" cols="30" rows="10"></textarea>
-    </div>
-    <div>
-      <button type="submit">Save</button>
+      <textarea [formControl] = "description"s name="desc" class="desc" placeholder="Note it..." id="desc" cols="30" rows="10"></textarea>       -->
+      <!-- <textarea [formControl] = "description" appNoteScroll (scrollPosition)="scrollHandler" name="desc" class="desc" placeholder="Note it..." id="desc" cols="30" rows="10"></textarea> -->
+    <!-- </div> -->
+    <!-- <div>
+      <button type="submit" (click)="add()">Save</button>
       <button type="submit">Cancel</button>
-    </div>
-  </form>
-</div>
-
-<div *ngFor="let t of notodo | async ">
-  <h4>{{t | json }}</h4>
-</div>
+    </div>   -->
+  <!-- </form> -->
+<!-- </div> -->

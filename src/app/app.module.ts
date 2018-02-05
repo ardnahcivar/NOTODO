@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { DOCUMENT } from '@angular/platform-browser';
 
 
 import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@ import {LoginService} from './services/login.service';
 import {AppRoutingModule} from './/app-routing.module';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {NoteFormComponent} from './note-form/note-form.component';
+import { NoteScrollDirective } from './directives/note-scroll.directive';
+import { RandomcolorDirective } from './directives/randomcolor/randomcolor.directive';
 
 @NgModule({
   declarations: [
@@ -26,18 +29,21 @@ import {NoteFormComponent} from './note-form/note-form.component';
     FooterComponent,
     LoginComponentComponent,
     DashboardComponent,
-    NoteFormComponent
+    NoteFormComponent,
+    NoteScrollDirective,
+    RandomcolorDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LoginService, Document],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

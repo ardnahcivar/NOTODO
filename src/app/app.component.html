@@ -1,7 +1,10 @@
 <app-header></app-header>
-<div *ngIf="!login.authenticated">
+<div *ngIf="!user">
   <app-login-component></app-login-component>
 </div>
-<app-note-form></app-note-form>
-<router-outlet></router-outlet>
+<div *ngIf="user">
+    <p>{{user.displayName|| ''}}</p>
+    <app-note-form></app-note-form>
+    <router-outlet></router-outlet>
+</div>      
 <app-footer></app-footer>
