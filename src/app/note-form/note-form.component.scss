@@ -1,76 +1,131 @@
-
 @media only screen and(min-width:768px){
     .note-list{
-        color: white;
+        perspective: 600;        
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(3,minmax(250px,1fr));
         grid-auto-rows: 250px;
         grid-gap: 20px;
+        .note-add{
+            text-align: center;
+            font-size: 5em;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            .circle-add{
+                height: 1em;
+                width: 1em;
+                border-radius: 50%;
+                // background-color:rgb(231, 49, 71);
+                .circle-plus{
+                    text-align: center;
+
+                }
+            }
+        }
         .note-item{
             background: #fff;
-            border-radius: 5px;            
-            // border:1px solid black;
+            border-radius: 5px;
+            transform-style: preserve-3d;
+            transition: all 1s ease-in-out;
+            &:active{
+                transform: rotateX(180deg);
+                grid-row:1/3;
+                grid-column:1/-1;
+            }
+            .side{
+                backface-visibility: hidden;
+                overflow: hidden;
+            }
+            .back{
+                text-align: center;
+                transform: rotateX(180deg);
+            }            
             .note-title{
+                backface-visibility: hidden;
                 display: flex;
                 height:20%;
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
+                color: white;
                 .note-title-text{
                     margin-left: 5%;
+                }
+            }
+            .note-desc{
+                height:80%;
+                p{
+                    overflow: hidden;
+                    height: 100%;
+                    margin: 3%;
                 }
             }
         }
         width: 55%;
     }
     
-    .note-form{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        .title{
-            border: none;
-            outline: none;
-        }
-        .desc{
-            border: none;
-            resize: none;
-            overflow-y: hidden;
-            &:focus,&:hover{
-                border: none;
-                outline:none;
-            }
-        }
-        input, textarea{
-            font-size: 3em;
-        }
-    }
+    // .note-form{
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     align-items: center;
+    //     .title{
+    //         border: none;
+    //         outline: none;
+    //     }
+    //     .desc{
+    //         border: none;
+    //         resize: none;
+    //         overflow-y: hidden;
+    //         &:focus,&:hover{
+    //             border: none;
+    //             outline:none;
+    //         }
+    //     }
+    //     input, textarea{
+    //         font-size: 3em;
+    //     }
+    // }
 }
 
 @media only screen and (max-width:480px) {
     .note-list{
-        color: white;
         margin: 0 auto;
         display: grid;
         grid-template-columns: minmax(250px,1fr);
         grid-auto-rows: 250px;
         grid-gap: 20px;
+        .note-add{
+            text-align: center;
+            font-size: 5em;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
         .note-item{
             background: #fff;
             border-radius: 5px;
-            // border:1px solid black;
             .note-title{
                 display: flex;
                 height:20%;
                 border-top-left-radius: 5px;
-                border-top-right-radius: 5px;                
+                border-top-right-radius: 5px;
+                color: white;
                 .note-title-text{
                     margin-left: 5%;
+                }
+            }
+            .note-desc{
+                height:80%;
+                p{
+                    overflow: hidden;
+                    height: 100%;
+                    margin: 3%;
                 }
             }
         }
         width: 85%;
     }
 }
-

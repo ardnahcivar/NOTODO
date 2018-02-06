@@ -5,14 +5,30 @@
   </li>
 </ul> -->
 
-<div class="note-list">
+<div class="note-list card-container">
+  <div class="note-item card">
+      <div class="note-add side">
+        <div class="circle-add"><span class="circle-plus">+</span></div>    
+      </div>
+  </div>
   <div *ngFor="let note of notodo | async" class="note-item">
-    <div appRandomcolor class="note-title">
+    <div appRandomcolor class="note-title side">
       <h2 class="note-title-text">{{note.title}}</h2>
     </div>
+    <div class="note-desc side">
+      <p>{{note.description}}</p>
+    </div>
+    <!-- <div class="side back">
+        Jimmy Eat World
+    </div> -->
+    <div appRandomcolor class="note-title side back">
+        <h2 class="note-title-text">{{note.title}}</h2>
+      </div>
+      <div class="note-desc side back ">
+        <p>{{note.description}}</p>
+      </div>
   </div>
 </div>
-
 <!-- <div class="note-form">
   <form>
     <div>
